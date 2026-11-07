@@ -1,7 +1,13 @@
+import itertools
+
 class Event:
+
+    id_counter = itertools.count()
+
     def __init__(
         self,
         name,
+        id=None,
         description=None,
         start_date=None,
         start_time=None,
@@ -9,6 +15,7 @@ class Event:
         tag=None
     ):
         self.name = name
+        self.id = next(Event.id_counter)
 
     # change name
     def SetName(
@@ -58,4 +65,4 @@ class Display:
     ):
         pass
 
-    # make a plan for this later
+# make a plan for continuing this later
