@@ -59,8 +59,6 @@ def get_tabula_calendar(link):
         start_time = dateTimeStart.astimezone(UK).time()
         duration = ((dateTimeEnd - dateTimeStart).total_seconds()) // 60 # Stored in minutes
 
-        print([name, description, location, start_date])
-
         calendar.append(Event(name=name, description=description, location=location, start_date=start_date, start_time=start_time, duration=duration))
     
     return calendar
