@@ -3,9 +3,14 @@ from datetime import date, time, datetime, timedelta
 """
 This is a standard (built-in) library for dealing with times (allows addition of times and stuff) and also deals with daylight savings.
 
-datetime(2026, 11, 10, 9, 0, tzinfo=UK)   # "9am UK time, 2026 10th Nov"
+datetime(2026, 11, 10, 9, 0)   # "9am 2026 10th Nov"
 
-We will get errors if we do not include tzinfo=UK 
+In cases where we need to account for daylight savings etc. follow this pattern:
+
+from zoneinfo import ZoneInfo (included with icalendar)
+UK = ZoneInfo("Europe/London")
+
+date = dateTime.astimezone(UK).date()
 """
 
 class Event:

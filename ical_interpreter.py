@@ -67,8 +67,3 @@ def get_tabula_calendar(link):
 
 
 
-
-print(get_tabula_calendar(r"https://tabula.warwick.ac.uk/api/v1/timetable/calendar/e2a54357-c95a-4f55-9df6-95d0b9e6cbbf.ics")[1])
-
-
-
