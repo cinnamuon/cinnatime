@@ -1,6 +1,20 @@
 import itertools
+from datetime import date, time, datetime, timedelta 
+"""
+This is a standard (built-in) library for dealing with times (allows addition of times and stuff) and also deals with daylight savings.
+
+datetime(2026, 11, 10, 9, 0, tzinfo=UK)   # "9am UK time, 2026 10th Nov"
+
+We will get errors if we do not include tzinfo=UK 
+"""
 
 class Event:
+    """
+    attribute | type
+    start_date | datetime.date
+    start_time | datetime.time
+    duration | int (minutes) 
+    """
 
     id_counter = itertools.count()
 
@@ -17,7 +31,17 @@ class Event:
     ):
         self.name = name
         self.id = next(Event.id_counter)
+        self.description = description
+        self.start_date = start_date
+        self.start_time = start_time
+        self.duration = duration
+        self.tag = tag
+        self.location = location
 
+    def __str__(
+    self
+    ):
+        return f"{getattr(self, 'name', None)}, {getattr(self, 'id', None)}, {getattr(self, 'description', None)}, {getattr(self, 'start_date', None)}, {getattr(self, 'start_time', None)}, {getattr(self, 'duration', None)}, {getattr(self, 'tag', None)}, {getattr(self, 'location', None)}"
     # change name
     def SetName(
         self, 
