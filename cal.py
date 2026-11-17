@@ -12,7 +12,8 @@ class Event:
         start_date=None,
         start_time=None,
         duration=None,
-        tag=None
+        tag=None,
+        location=None
     ):
         self.name = name
         self.id = next(Event.id_counter)
@@ -58,6 +59,12 @@ class Event:
         new_tag
     ):
         self.tag = new_tag
+
+    def setLocation(
+            self,
+            new_location
+    ):
+        self.location = new_location
 
 class Display:
     def __init__(
